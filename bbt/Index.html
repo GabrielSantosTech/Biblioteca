@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Escolar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN / REGISTRO -->
+<div id="login-container">
+    <h2>Login</h2>
+    <input type="text" id="login-usuario" placeholder="Usuário">
+    <input type="password" id="login-senha" placeholder="Senha">
+    <button id="btn-login">Entrar</button>
+
+    <h2>Registrar</h2>
+    <input type="text" id="reg-usuario" placeholder="Nome do aluno ou professor">
+    <input type="password" id="reg-senha" placeholder="Senha">
+    <label for="reg-serie">Série:</label>
+    <select id="reg-serie">
+        <option value="6º ano">6º ano</option>
+        <option value="7º ano">7º ano</option>
+        <option value="8º ano">8º ano</option>
+        <option value="9º ano">9º ano</option>
+        <option value="1º colegial">1º colegial</option>
+        <option value="2º colegial">2º colegial</option>
+        <option value="3º colegial">3º colegial</option>
+    </select>
+    <button id="btn-registrar">Registrar</button>
+
+    <p id="mensagem"></p>
+</div>
+
+<!-- BIBLIOTECA -->
+<div id="biblioteca" style="display:none;">
+    <header class="top-bar">
+        <h1>CARMINA MENDES BIBLIOTECA 2025</h1>
+        <div class="user-info">
+            <span id="nome-usuario"></span> |
+            <span id="hora-data"></span>
+            <button id="btn-saladofuturo" onclick="window.open('https://saladofuturo.educacao.sp.gov.br','_blank')">Sala do Futuro</button>
+            <button id="btn-sair">Sair</button>
+            <button id="modo-escuro">🌙</button>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- FILTROS -->
+        <aside class="filtros">
+            <h3>Filtrar por gênero</h3>
+            <button data-categoria="todos">Todos</button>
+            <button data-categoria="romance">Romance</button>
+            <button data-categoria="acao">Ação</button>
+            <button data-categoria="drama">Drama</button>
+            <button data-categoria="terror">Terror</button>
+            <button data-categoria="kids">Kids</button>
+        </aside>
+
+        <!-- ACERVO -->
+        <div id="acervo">
+            <div class="livros" data-categoria="romance" data-link="pdfs/dom-casmurro.pdf">
+                <img src="imagens/dom-casmurro.jpg" class="capa-livro" alt="Dom Casmurro">
+                <h3>Dom Casmurro</h3>
+                <p>Machado de Assis</p>
+                <p class="tempo-lido"></p>
+            </div>
+            <div class="livros" data-categoria="acao" data-link="pdfs/o-alienista.pdf">
+                <img src="imagens/o-alienista.jpg" class="capa-livro" alt="O Alienista">
+                <h3>O Alienista</h3>
+                <p>Machado de Assis</p>
+                <p class="tempo-lido"></p>
+            </div>
+            <div class="livros" data-categoria="drama" data-link="pdfs/grande-sertao-veredas.pdf">
+                <img src="imagens/grande-sertao-veredas.jpg" class="capa-livro" alt="Grande Sertão">
+                <h3>Grande Sertão: Veredas</h3>
+                <p>João Guimarães Rosa</p>
+                <p class="tempo-lido"></p>
+            </div>
+            <div class="livros" data-categoria="kids" data-link="pdfs/234-MÔNICA-2.pdf">
+                <img src="imagens/234 MONICA.jpg" class="capa-livro" alt="MÔNICA">
+                <h3>MÔNICA EP234</h3>
+                <p>Mauricio de Sousa</p>
+                <p class="tempo-lido"></p>
+            </div>
+        </div>
+
+        <!-- ÁREA ADMINISTRATIVA (professor) -->
+        <div id="admin-area" style="display:none;">
+            <h3>Área Administrativa</h3>
+            <input type="text" id="busca-aluno" placeholder="Buscar aluno por nome">
+            <div id="lista-alunos"></div>
+            <div id="perfil-aluno" style="display:none;">
+                <h4 id="perfil-nome"></h4>
+                <p id="perfil-serie"></p>
+                <h5>Livros lidos:</h5>
+                <div id="perfil-livros"></div>
+                <h5>Atividades:</h5>
+                <div id="perfil-atividades"></div>
+                <button id="voltar-lista">Voltar à lista</button>
+            </div>
+        </div>
+
+        <!-- ÁREA ATIVIDADES DO ALUNO -->
+        <div id="atividades-aluno" style="display:none;">
+            <h3>Suas Atividades</h3>
+            <div id="lista-atividades"></div>
+        </div>
+
+    </div>
+
+    <footer class="rodape">
+        <p>© Carmina Mendes Serodio | Autores do site: Gabriel & Raphael 2 D.S</p>
+    </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

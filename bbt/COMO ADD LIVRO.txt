@@ -1,0 +1,6 @@
+<div class="livros" data-categoria="CATEGORIA" data-link="pdfs/NOME-DO-PDF.pdf">
+    <img src="imagens/IMAGEM.jpg" class="capa-livro" alt="NOME">
+    <h3>NOME EXIBIDO</h3>
+    <p>AUTOR</p>
+    <p class="tempo-lido"></p>
+</div>
